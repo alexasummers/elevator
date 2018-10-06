@@ -1,2 +1,2 @@
 ﻿  Source.cpp
-c:\users\alexa\documents\ds 303\elevator\project4\project4\source.cpp(51): error C4700: uninitialized local variable 'averageTime' used
+  Project4.vcxproj -> C:\Users\Alexa\Documents\DS 303\elevator\Project4\Debug\Project4.exe

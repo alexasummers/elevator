@@ -4,6 +4,12 @@
 #include <ctime>
 using namespace std;
 
+/**
+* @author  Alexa Summers
+* @version 1.5
+* @date last edited  10-5-2018
+*/
+
 int main() {
 	bool exit = false; //initializing booleans	
 
@@ -31,9 +37,9 @@ int main() {
 		bool goingUp; //if true, the elevator is going up. If false, the elevator is going down.
 
 		if (howManyFloors <= 3)
-			int averageTime = (rand() % longestTime1 + leastTime1); //If the amount of floors the elevator moves is less than or equal to three, the amount of time will be lower
+			averageTime = (rand() % longestTime1 + leastTime1); //If the amount of floors the elevator moves is less than or equal to three, the amount of time will be lower
 		if (howManyFloors > 3)
-			int averageTime = (rand() % longestTime2 + leastTime2);//If the amount of floors the elevator moves is more than three, the amount of time will be higher
+			 averageTime = (rand() % longestTime2 + leastTime2);//If the amount of floors the elevator moves is more than three, the amount of time will be higher
 		
 		if (currentFloor < destination)
 			goingUp = true; //If the current floor is less than the destination, then the elevator will be moving up
@@ -45,17 +51,19 @@ int main() {
 		Elevator.NewRequest(move, goingUp); //Tells the elevator there is a new request
 
 		//outputs all the information
-		cout << "Time " << totalCycles << "\t The elevator is going from floor." << currentFloor << " to floor " << destination << endl; //outputting the elevator location and travel information
+		cout << "Run: " << totalCycles << endl;
+		cout << "The elevator is going from floor " << currentFloor << " to floor " << destination << endl; //outputting the elevator location and travel information
 		cout << "The elevator traveled " << howManyFloors << " floors." << endl;
-		cout << "There are " << amountOfPeople << " riding the elevator currently. " << endl;
+		cout << "There are " << amountOfPeople << " people riding the elevator currently. " << endl;
 		cout << "The wait time was " << averageTime << " seconds. "<< endl;
+		cout << endl;
 		Elevator.UpdatePos(); //updates the elevator position
 
 		currentFloor = destination;
 
 		totalCycles++;
 		if (totalCycles == 100)
-			exit = true; //tells the elevator to run 100 times, and then stop
+			exit = true; //tells the elevator to run 99 times, and then stop
 	} while (!exit);
 
 	cout << endl << "DONE" << endl;
